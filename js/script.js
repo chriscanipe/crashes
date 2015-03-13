@@ -59,19 +59,19 @@ d3.csv("js/crashes.csv", function(error, data) {
 
   /* ****************************************************** */
   // This is where we set up our data. It's a little complicated, but here's what's basically happening:
-  // "color.domain()"" is an array of two values: ["Fatalities change", "Crashes change"].
-  // We're creating an object for each, and types will be an array of those two objects.
-  // Name is the name of the series: again, "Fatalities change" and "Crashes change".
-  // And values is the date/value series, expressed as an array of objects.
+  // "color.domain()" is an array of two values: ["Fatalities change", "Crashes change"].
+  // We're creating an object for each, and "types" will be an array of those two objects.
+  // "name" is the name of the series — again, "Fatalities change" and "Crashes change".
+  // And "values" is the date/value series, expressed as an array of objects.
   /* ****************************************************** */
   var types = color.domain().map(function(name) {
     return {
       name: name,
       values: data.map(function(d) {
         /* ****************************************************** */
-        // This is where we set the set up each object for the values array.
-        // I added crashes and fatalities to each data point, so we can see them on mouseover.
-        // I also added series name variable, so we can see which line we're looking at.
+        // This is where we set the set up each object for the "values" array.
+        // I added "crashes" and "fatalities" to each data point, so we can see them on mouseover.
+        // I also created a "seriesName" variable, so we can see which line we're looking at.
         /* ****************************************************** */
         return {date: d.Yr, change: +d[name], crashes : d.Crashes, fatalities : d.Fatalities, seriesName : name};
       })
