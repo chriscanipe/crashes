@@ -133,8 +133,8 @@ d3.csv("js/crashes.csv", function(error, data) {
 
 type.selectAll(".dot")
     /* ****************************************************** */
-    //And the data is the values array nested in the data object already attached to type.
-    //This is really tricky, by the way. I'm not sure we covered this specific concept in class.
+    //And the data is the values array nested in the data object already attached to "type".
+    //(This is really tricky, by the way. I'm not sure we covered this specific concept in class.)
     /* ****************************************************** */
     .data(function(d) {
       return d.values;
